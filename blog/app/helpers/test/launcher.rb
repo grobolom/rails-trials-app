@@ -26,27 +26,3 @@ class Launcher
     end
 end
 
-def help
-    print "
-    You must pass in path to the file to launch.
-
-    Usage: #{__FILE__} target_file
-"
-end
-
-if ARGV.empty?
-    help
-    exit
-end
-
-app_map = {
-    'html' => 'firefox',
-    'rb' => 'vim',
-    'jpg' => 'gimp',
-}
-
-
-l = Launcher.new app_map
-target = ARGV.join ' '
-l.run target
-
